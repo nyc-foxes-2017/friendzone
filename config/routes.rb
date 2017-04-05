@@ -4,5 +4,5 @@ Rails.application.routes.draw do
 resources :users, except: [:index]
 resources :posts
 resources :friends
-root to: "home#index"
+root 'posts#index'
 end
