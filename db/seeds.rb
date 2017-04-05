@@ -8,8 +8,7 @@
 
 
 #make users
-
-100.times do
+until User.count == 100
   User.create(
   name: Faker::Name.name,
   email: Faker::Internet.free_email,
