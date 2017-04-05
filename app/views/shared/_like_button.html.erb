@@ -1,0 +1,10 @@
+<% user_likes = current_user.likes?(post) %>
+<% action_url = user_likes ? "/posts/#{post.id}/likes/#{current_user.get_like_id(post)}" : "/posts/#{post.id}/likes" %>
+<form class="like-button" action="<%=action_url%>" method="post">
+
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+  <% if user_likes%>
+  <input name="_method" type="hidden" value="delete">
+  <% end %>
+  <input type="submit" value=<%= user_likes ?  "Unlike" : "Like!"  %> >
+</form>
