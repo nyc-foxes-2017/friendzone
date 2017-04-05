@@ -40,13 +40,24 @@ header {
 .buttonize {
   border-style: solid;
   border-width: 1px;
-  border-radius: 5px;
+  border-radius: 4px;
   text-decoration : none;
-  padding : 1px;
-  border-color : #000000;
+  padding : 2px;
+  border-color : #D3D3D3;
   background-color: #ff69b4;
 }
 
 .newsfeed-center {
-  
+
+}
+
+
+.buttonize-white {
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  text-decoration : none;
+  padding : 1px;
+  border-color : #D3D3D3;
+  background-color: #ffffff;
 }
