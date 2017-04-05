@@ -11,7 +11,15 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-
+<nav>
+  <ul>
+  <% if user_signed_in? %>
+    <form id="search-form">
+      <input id="search" type="text" name="query" />
+    </form>
+  <% end %>
+  </ul>
+</nav>
 
 
     <%= yield %>

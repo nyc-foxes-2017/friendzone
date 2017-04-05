@@ -1,9 +1,10 @@
-<%= form_for @post do |f| %>
-<%= render 'shared/errors' %>
+<form method="post" action="/posts/<%=@post.id%>/edit">
+  <input type="hidden" name="_method" value="put">
+  <%= render 'shared/errors' %>
   <p>
-    <%= f.text_area :content, class: 'post-text' %><br>
+    <textarea name = "post[content]" cols="60" rows="5" placeholder="What's on your mind?"></textarea>
   </p>
   <p>
-    <%= f.submit "Edit Post" %>
+    <input type="submit" value = "Post" />
   </p>
-<% end %>
+</form>

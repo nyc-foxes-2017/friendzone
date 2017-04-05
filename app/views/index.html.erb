@@ -1,6 +1,7 @@
 <div class="links-left">
   <ul class="links-list">
-    <li><%= link_to current_user.name, user_path(current_user) %></li>
+    <li><a href="/users/<%=current_user.id%>"><%=current_user.name %></a></li>
+    <li><a href="#">Friends %></a></li>
   </ul>
 </div>
 
