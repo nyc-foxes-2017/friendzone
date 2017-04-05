@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :posts
   has_many :likes
   has_many :liked_posts, through: :likes
-  
+
   has_many :friendships
 
   validates :name, :email, presence: true
@@ -36,4 +36,13 @@ class User < ApplicationRecord
   def own_requests
     @own_requests = Friendship.where("requester = ? and pending = ?", self.id, true)
   end
+
+  def likes?(post)
+    Like.where("user_id = ? and post_id = ?", self.id, post.id).count != 0
+  end
+
+  def get_like_id(post)
+    Like.where("user_id = ? and post_id = ?", self.id, post.id)[0].id
+  end
+
 end

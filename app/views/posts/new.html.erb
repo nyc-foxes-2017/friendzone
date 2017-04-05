@@ -1,4 +1,6 @@
 <form method="post" action="/posts">
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+
   <%= render 'shared/errors' %>
 
   <p>
@@ -8,5 +10,3 @@
     <input type="submit" value = "Post" />
   </p>
 </form>
-
-

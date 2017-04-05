@@ -1,0 +1,8 @@
+<div class="post-username">
+  <strong> <%= post.user.name %> </strong></td></tr>
+</div>
+<div class="post-body">
+  <%= post.content%>
+</div>
+<div class="post-time"><%= time_ago_in_words(post.created_at)%></div>
+<div class="like-button"> <%= render partial: "shared/like_button", locals: {post: post}%> </div>
