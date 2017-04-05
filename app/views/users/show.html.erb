@@ -2,17 +2,17 @@
 <table class = "profile-table">
     <tr>
 
-      <th><%=current_user.name%></th>
+      <th><%=@user.name%></th>
     </tr>
     <tr>
-      <%if current_user.avatar_url %>
-      <td><img src= <%=current_user.avatar_url %>/></td>
+      <%if @user.avatar_url %>
+      <td><img src= <%=@user.avatar_url %>/></td>
       <% end %>
     </tr>
 
     <tr>
-      <%if current_user.friends %>
-      <td><%= current_user.friends.count %> friends</td>
+      <%if @user.friends %>
+      <td><%= @user.friends.count %> friends</td>
       <% end %>
     </tr>
 
@@ -32,13 +32,10 @@
     </tr>
     <tr>
       <td><%= time_ago_in_words(post.created_at)%></td>
-
     </tr>
-
     <tr>
-      <td><a href="#">Like</a></td>
+      <td><a class="buttonize" href="#">Friend Request</a></td>
     </tr>
-
   </table>
   <% else %>
   <p>There are no posts in your feed! Try making a few friend requests or post a story of your own.
