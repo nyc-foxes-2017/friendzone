@@ -8,26 +8,16 @@
 </div>
 
 <div class="post-form">
-<%= render 'shared/post' %>
-
+<%= render 'shared/post_form' %>
 </div>
 
 <div class="newsfeed-center">
   <% if @posts %>
-  <table class = "newsfeed-table">
-    <tr>
+  <div id = "newsfeed-table">
     <% @posts.each do |post|%>
-      <td><%= post.content%></td>
-    </tr>
-    <tr>
-      <td><%= time_ago_in_words(post.created_at)%></td>
-    </tr>
-
-    <tr>
-      <td><a href="#">Like</a></td>
-    </tr>
+      <%= render partial: "post", locals: {post: post} %>
     <% end %>
-  </table>
+  </div>
   <% else %>
   <p>There are no posts in your feed! Try making a few friends requests or post a story of your own.</p>
   <% end %>

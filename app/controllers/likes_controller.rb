@@ -16,9 +16,11 @@ class LikesController < ApplicationController
   end
 
   def create
-    @like = Like.new(like_params)
+    @like = Like.new
+    @like.post_id = params[:post_id]
+    @like.user_id = current_user.id
     if @like.save
-      redirect_to @like
+      redirect_to '/'
     else
       render 'new'
     end
@@ -27,25 +29,24 @@ class LikesController < ApplicationController
   def update
     find_like
     if @like.update(like_params)
-      redirect_to @like
+      redirect_to '/'
     else
       render 'edit'
     end
   end
 
-  def delete
+  def destroy
     find_like
     @like.destroy
-
-
+    redirect_to '/'
   end
 
   private
   def like_params
-    params.require(:like).permit(:user, :post)
+    params.require(:like).permit(:post)
   end
 
   def find_like
-    @like = Like.find_by(id: params[:id])
+    @like = Like.find(params[:id])
   end
 end
