@@ -1,9 +1,11 @@
-<form method="post" action="/posts">
+<%= form_for :post, url: posts_path(@user), method: :post do |f| %>
   <%= render 'shared/errors' %>
   <p>
-    <textarea name = "post[content]" cols="60" rows="5" placeholder="What's on your mind?"></textarea>
+    <%= f.label :content %><br>
+    <%= f.text_area :content, :value => "What's on your mind?" %>
   </p>
+
   <p>
-    <input type="submit" value = "Post" />
+    <%= f.submit %>
   </p>
-</form>
+<% end %>
