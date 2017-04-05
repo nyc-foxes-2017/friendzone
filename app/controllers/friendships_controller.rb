@@ -16,7 +16,8 @@ class FriendshipsController < ApplicationController
   end
 
   def create
-    @friendships = Friendship.new(friend_params)
+    @friendships = current_user.friendships.new(friend_params)
+    byebug
     if @friendships.save
       redirect_to @friendships
     else

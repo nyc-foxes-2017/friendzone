@@ -6,13 +6,24 @@
     </tr>
     <tr>
       <%if @user.avatar_url %>
+
       <td><img src= <%=@user.avatar_url %>/></td>
+
       <% end %>
     </tr>
 
     <tr>
       <%if @user.friends %>
       <td><%= @user.friends.count %> friends</td>
+      <% end %>
+    </tr>
+
+    <tr>
+      <%if @user != current_user %>
+      <td><form action="/friends" method="post">
+
+        <input type="submit" value="Add Friend" />
+      </form></td>
       <% end %>
     </tr>
 
@@ -26,8 +37,8 @@
 <div class="newsfeed-center">
   <% if @posts %>
   <table class = "newsfeed-table">
+    <% @posts.each do |post|%>
     <tr>
-      <% @posts.each do |post|%>
       <td><%= post.content%></td>
     </tr>
     <tr>
@@ -36,9 +47,13 @@
     <tr>
       <td><a class="buttonize" href="#">Friend Request</a></td>
     </tr>
+
+    <% end %>
+
+
   </table>
   <% else %>
-  <p>There are no posts in your feed! Try making a few friend requests or post a story of your own.
+  <p>There are no posts in <%=@user.name%>'s' feed!
   </p>
   <% end %>
 </div>
