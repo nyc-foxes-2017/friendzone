@@ -171,16 +171,7 @@ PLATFORMS
 DEPENDENCIES
   byebug
   coffee-rails (~> 4.2)
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
   devise
-
->>>>>>> f2b35ed68af6738ebf47bc4e6599d1a2fc22a085
-=======
-  devise
->>>>>>> 060b68631112c372744be8a7c903bb48c64dc269
   faker
   jbuilder (~> 2.5)
   jquery-rails
