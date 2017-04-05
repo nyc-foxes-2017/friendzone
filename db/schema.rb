@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20170405143138) do
   enable_extension "plpgsql"
 
   create_table "friendships", force: :cascade do |t|
+
     t.integer  "requester",                 null: false
     t.integer  "requestee",                 null: false
     t.boolean  "pending",    default: true

@@ -1,3 +1,6 @@
 class Friendship < ApplicationRecord
-  has_and_belongs_to_many :user
+
+  belongs_to_and_has_many :users
+
+  validates :pending, presence: true
 end
