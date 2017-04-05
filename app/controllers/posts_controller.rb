@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all
+    @posts = Post.all.order("created_at DESC")
   end
 
   def show
@@ -16,10 +16,10 @@ class PostsController < ApplicationController
   end
 
   def create
-    @user = User.find_by(id: params[:id])
-    @post = @user.posts.new(post_params)
+    current_user
+    @post = current_user.posts.new(post_params)
     if @post.save
-      redirect_to @post
+      redirect_to root_path
     else
       render 'new'
     end
@@ -28,7 +28,7 @@ class PostsController < ApplicationController
   def update
     find_post
     if @post.update(post_params)
-      redirect_to @post
+      redirect_to root_path
     else
       render 'edit'
     end
@@ -38,7 +38,7 @@ class PostsController < ApplicationController
     find_post
     @post.destroy
 
-
+    redirect_to root_path
   end
 
   private
