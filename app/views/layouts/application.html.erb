@@ -11,17 +11,21 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-<nav>
-  <ul>
-  <% if user_signed_in? %>
-    <form id="search-form">
-      <input id="search" type="text" name="query" />
-    </form>
-  <% end %>
-  </ul>
-</nav>
-
-
+    <header>
+      <div class="left-align">
+        <h1>Welcome to friendzone</h1>
+      </div>
+      <div class="right-align">
+        <nav>
+          <% if user_signed_in? %>
+            <form id="search-form">
+              <label for="search">Search:</label>
+              <input id="search" type="text" name="query" placeholder="Find Your Friends" />
+            </form>
+          <% end %>
+        </nav>
+      </div>
+    </header>
     <%= yield %>
   </body>
 </html>
