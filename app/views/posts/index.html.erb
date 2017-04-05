@@ -1,19 +1,16 @@
 
 
-<% if user_signed_in? %>
-
-<div class="links-left">
-  <ul class="links-list">
-    <li><a href="/users/<%=current_user.id%>"><%=current_user.name %></a></li>
-    <li><a href="#">Friends %></a></li>
-  </ul>
+<% if user_signed_in?%>
+<div class="right-align">
+    <p><a class="buttonize" href="/users/<%=current_user.id%>"><%=current_user.name %></a></p>
+    <p><a class="buttonize" href="#">Friends</a></p>
 </div>
 
-<div class="post-form">
+<div class="center-align post-form">
   <%= render 'shared/post' %>
 </div>
 
-<div class="newsfeed-center">
+<div class="left-align newsfeed-center">
   <% if @posts %>
   <table class = "newsfeed-table">
     <tr>
@@ -21,11 +18,14 @@
       <td><%= post.content%></td>
     </tr>
     <tr>
+      <td><a href="/users/<%=post.user.id%>"><%=post.user.name %></a></td>
+    </tr>
+    <tr>
       <td><%= time_ago_in_words(post.created_at)%></td>
     </tr>
 
     <tr>
-      <td><a href="#">Like</a></td>
+      <td><a class="buttonize" href="#">Like</a></td>
     </tr>
     <% end %>
   </table>

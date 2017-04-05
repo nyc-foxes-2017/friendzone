@@ -11,20 +11,30 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-<nav>
-  <ul>
-    <li><%= link_to "Home", root_path %></li>
-  <% if user_signed_in? %>
-    <li><%= link_to "Profile", user_path(current_user) %></li>
-    <li><%= link_to "Log Out", destroy_user_session_path, :method => :delete %></li>
-  <% else %>
-    <li><%= link_to "Log In", new_user_session_path %></li>
-    <li><%= link_to "Register", new_user_registration_path %></li>
-  <% end %>
-  </ul>
-</nav>
-
-
+    <header>
+      <div class="left-align">
+        <h1>Welcome to friendzone</h1>
+        <p><%= link_to "Home", root_path, class: "buttonize-white" %> |
+          <% if user_signed_in? %>
+            <%= link_to "Profile", user_path(current_user), :class => "buttonize-white" %> |
+            <%= link_to "Log Out", destroy_user_session_path, :method => :delete, class: "buttonize-white" %>
+          <% else %>
+            <%= link_to "Log In", new_user_session_path, class: "buttonize-white" %> |
+            <%= link_to "Register", new_user_registration_path, class: "buttonize-white" %>
+          <% end %>
+        </p>
+      </div>
+      <div class="right-align">
+        <nav>
+          <% if user_signed_in? %>
+            <form id="search-form">
+              <label for="search">Search:</label>
+              <input id="search" type="text" name="query" placeholder="Find Your Friends" />
+            </form>
+          <% end %>
+        </nav>
+      </div>
+    </header>
     <%= yield %>
   </body>
 </html>
