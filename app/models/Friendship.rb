@@ -1,3 +1,3 @@
 class Friendship < ApplicationRecord
-  belongs_to_and_has_many :users
+  has_and_belongs_to_many :user
 end

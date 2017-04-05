@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20170405143138) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "friends", force: :cascade do |t|
+  create_table "friendships", force: :cascade do |t|
     t.integer  "requester",                 null: false
     t.integer  "requestee",                 null: false
     t.boolean  "pending",    default: true
