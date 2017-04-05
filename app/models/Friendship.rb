@@ -4,7 +4,7 @@ class Friendship < ApplicationRecord
   belongs_to_and_has_many :users
 
   validates :pending, presence: true
-  validates :requester_requestee
+  validate :requester_requestee
 
   def requester_requestee
     if self.requester == self.requestee
