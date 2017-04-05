@@ -13,10 +13,13 @@
     <p class="alert"><%= alert %></p>
 <nav>
   <ul>
+    <li><%= link_to "Home", root_path %></li>
   <% if user_signed_in? %>
-    <form id="search-form">
-      <input id="search" type="text" name="query" />
-    </form>
+    <li><%= link_to "Profile", user_path(current_user) %></li>
+    <li><%= link_to "Log Out", destroy_user_session_path, :method => :delete %></li>
+  <% else %>
+    <li><%= link_to "Log In", new_user_session_path %></li>
+    <li><%= link_to "Register", new_user_registration_path %></li>
   <% end %>
   </ul>
 </nav>
