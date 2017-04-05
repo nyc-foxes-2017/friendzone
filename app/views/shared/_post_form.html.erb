@@ -1,10 +1,5 @@
-<<<<<<< HEAD:app/views/shared/_post_form.html.erb
-<form method="post" action="/posts">
-  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
 
-=======
 <%= form_for :post, url: posts_path(@user), method: :post do |f| %>
->>>>>>> 3cb886853de12f2076ab643e7de545ef1f6f2e02:app/views/shared/_post.html.erb
   <%= render 'shared/errors' %>
   <p>
     <%= f.label :content %><br>
