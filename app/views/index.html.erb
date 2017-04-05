@@ -1,14 +1,15 @@
 
-<% if user_signed_in?
+<% if user_signed_in? %>
 <div class="links-left">
   <ul class="links-list">
     <li><a href="/users/<%=current_user.id%>"><%=current_user.name %></a></li>
-    <li><a href="#">Friends %></a></li>
+    <li><a href="#">Friends</a></li>
   </ul>
 </div>
 
-<div class="post-form">
-  <%= render 'shared/_post_.html.erb' %>
+
+  <%= render 'shared/post.html.erb' %>
+
 </div>
 
 <div class="newsfeed-center">
@@ -28,7 +29,7 @@
     <% end %>
   </table>
   <% else %>
-  <p>There are no posts in your feed! Try making a few friends requests or post a story of your own.</p>
+  <p>There are no posts in your feed! Try making a few friend requests or post a story of your own.</p>
   <% end %>
 </div>
 

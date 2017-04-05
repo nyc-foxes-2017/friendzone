@@ -1,21 +1,23 @@
 
+
 <% if user_signed_in?%>
-<div class="links-left">
-  <ul class="links-list">
-    <li><a href="/users/<%=current_user.id%>"><%=current_user.name %></a></li>
-    <li><a href="#">Friends %></a></li>
-  </ul>
+<div class="right-align">
+    <p><a class="buttonize" href="/users/<%=current_user.id%>"><%=current_user.name %></a></p>
+    <p><a class="buttonize" href="#">Friends</a></p>
 </div>
 
-<div class="post-form">
-<%= render 'shared/post_form' %>
+
+<div class="center-align post-form">
+  <%= render 'shared/post' %>
 </div>
 
-<div class="newsfeed-center">
+<div class="left-align newsfeed-center">
   <% if @posts %>
   <div id = "newsfeed-table">
     <% @posts.each do |post|%>
+
       <%= render partial: "post", locals: {post: post} %>
+
     <% end %>
   </div>
   <% else %>

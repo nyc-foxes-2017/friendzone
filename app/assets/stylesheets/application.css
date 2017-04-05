@@ -1,4 +1,4 @@
-/*
+/*header
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
@@ -13,3 +13,51 @@
  *= require_tree .
  *= require_self
  */
+
+* {
+  font-style: normal;
+  font-family: "Goudy Bookletter 1911", sans-serif;
+
+}
+
+header {
+  padding: 20px;
+  background-color: #ff69b4;
+}
+
+.left-align {
+  text-align: left;
+}
+
+.right-align {
+  text-align: right;
+}
+
+.center-align {
+  text-align: center;
+}
+
+.buttonize {
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 4px;
+  text-decoration : none;
+  padding : 2px;
+  border-color : #D3D3D3;
+  background-color: #ff69b4;
+}
+
+.newsfeed-center {
+
+}
+
+
+.buttonize-white {
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  text-decoration : none;
+  padding : 1px;
+  border-color : #D3D3D3;
+  background-color: #ffffff;
+}
