@@ -1,5 +1,7 @@
 
-<% if user_signed_in?%>
+
+<% if user_signed_in? %>
+
 <div class="links-left">
   <ul class="links-list">
     <li><a href="/users/<%=current_user.id%>"><%=current_user.name %></a></li>
@@ -8,8 +10,7 @@
 </div>
 
 <div class="post-form">
-<%= render 'shared/post' %>
-
+  <%= render 'shared/post' %>
 </div>
 
 <div class="newsfeed-center">
