@@ -2,17 +2,17 @@
 <table class = "profile-table">
     <tr>
 
-      <th><%=current_user.name%></th>
+      <th><%=@user.name%></th>
     </tr>
     <tr>
-      <%if current_user.avatar_url %>
+      <%if @user.avatar_url %>
       <td><img src= <%=current_user.avatar_url %>/></td>
       <% end %>
     </tr>
 
     <tr>
-      <%if current_user.friends %>
-      <td><%= current_user.friends.count %> friends</td>
+      <%if @user.friends %>
+      <td><%= @user.friends.count %> friends</td>
       <% end %>
     </tr>
 
@@ -26,8 +26,8 @@
 <div class="newsfeed-center">
   <% if @posts %>
   <table class = "newsfeed-table">
+    <% @posts.each do |post|%>
     <tr>
-      <% @posts.each do |post|%>
       <td><%= post.content%></td>
     </tr>
     <tr>
@@ -38,6 +38,7 @@
     <tr>
       <td><a href="#">Like</a></td>
     </tr>
+    <% end %>
 
   </table>
   <% else %>
