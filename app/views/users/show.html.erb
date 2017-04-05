@@ -1,20 +1,17 @@
 
 <table class = "profile-table">
+  <% if @user %>
     <tr>
-
       <th><%=@user.name%></th>
     </tr>
     <tr>
-      <%if @user.avatar_url %>
       <td><img src= <%=@user.avatar_url %>/></td>
-      <% end %>
     </tr>
-
     <tr>
-      <%if @user.friends %>
       <td><%= @user.friends.count %> friends</td>
-      <% end %>
     </tr>
+  <% end %>
+
 
   </table>
 
@@ -33,6 +30,7 @@
     <tr>
       <td><%= time_ago_in_words(post.created_at)%></td>
     </tr>
+      <% end %>
     <tr>
       <td><a class="buttonize" href="#">Friend Request</a></td>
     </tr>
