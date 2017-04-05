@@ -1,0 +1,10 @@
+<table>
+  <% if user_signed_in? %>
+    <%= @friendships.each do |friendship| %>
+      <tr>
+        <td><%= friendship %></td>
+      </tr>
+    <% end %>
+  <% end %>
+
+</table>

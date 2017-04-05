@@ -1,6 +1,6 @@
 class FriendshipsController < ApplicationController
   def index
-    @friendships = Friendship.all
+    find_friendship
   end
 
   def show
@@ -46,6 +46,6 @@ class FriendshipsController < ApplicationController
   end
 
   def find_friendship
-    @friendships = Friendship.find_by(id: params[:id])
+    @friendships = Friendship.where("requester = ? OR requestee = ?", current_user.id, current_user.id)
   end
 end
