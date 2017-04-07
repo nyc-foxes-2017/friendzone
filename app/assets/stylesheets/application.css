@@ -1,0 +1,63 @@
+/*header
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+* {
+  font-style: normal;
+  font-family: "Goudy Bookletter 1911", sans-serif;
+
+}
+
+header {
+  padding: 20px;
+  background-color: #ff69b4;
+}
+
+.left-align {
+  text-align: left;
+}
+
+.right-align {
+  text-align: right;
+}
+
+.center-align {
+  text-align: center;
+}
+
+.buttonize {
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 4px;
+  text-decoration : none;
+  padding : 2px;
+  border-color : #D3D3D3;
+  background-color: #ff69b4;
+}
+
+.newsfeed-center {
+
+}
+
+
+.buttonize-white {
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  text-decoration : none;
+  padding : 1px;
+  border-color : #D3D3D3;
+  background-color: #ffffff;
+}

@@ -1,0 +1,12 @@
+<form method="post" action="/posts">
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+
+  <%= render 'shared/errors' %>
+
+  <p>
+    <textarea name = "post[content]" cols="60" rows="5" placeholder="What's on your mind?"></textarea>
+  </p>
+  <p>
+    <input type="submit" value = "Post" />
+  </p>
+</form>

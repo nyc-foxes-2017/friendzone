@@ -1,0 +1,30 @@
+
+
+<% if user_signed_in?%>
+<div class="right-align">
+    <p><a class="buttonize" href="/users/<%=current_user.id%>"><%=current_user.name %></a></p>
+    <p><a class="buttonize" href="#">Friends</a></p>
+</div>
+
+
+<div class="center-align post-form">
+  <%= render 'shared/post_form' %>
+</div>
+
+<div class="left-align newsfeed-center">
+  <% if @posts %>
+  <div id = "newsfeed-table">
+    <% @posts.each do |post|%>
+
+      <%= render partial: "post", locals: {post: post} %>
+
+    <% end %>
+  </div>
+  <% else %>
+  <p>There are no posts in your feed! Try making a few friends requests or post a story of your own.</p>
+  <% end %>
+</div>
+
+
+
+<% end %>
